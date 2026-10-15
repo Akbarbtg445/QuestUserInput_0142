@@ -1,8 +1,22 @@
 package com.example.myapplication
 
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.OutlinedTextField
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.Alignment
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.selection.selectable
+import androidx.compose.ui.unit.dp
+import androidx.compose.material3.OutlinedTextField // Gunakan material3 atau material tergantung proyek Anda
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.RadioButton
 
 @Composable
 fun FormDataDiri(modifier: Modifier) {
@@ -23,6 +37,34 @@ fun FormDataDiri(modifier: Modifier) {
             singleLine = true,
             shape = MaterialTheme.shapes.large,
             modifier = Modifier.width(250.dp)
+            label = { Text(text = "Nama Lengkap") },
+            onValueChange = {
+                textNama = it
+            }
         )
+        Row {
+            gender.forEach { item ->
+            Row(modifier=Modifier.selectable(
+                selected = textJK == item,
+                onClick = { textJK = item }
+            ), verticalAlignment = Alignment.CenterVertically) {
+                RadioButton(
+                    selected = textJK == item,
+                    onClick = {
+                        textJK = item }
+                )
+                texT(item)
+
+            }
+            }
+        }
+        OutlinedTextField(
+            value = textAlamat,
+            singleLine = true,
+            modifier = Modifier.width(250.dp),
+            label = { Text("Alamat") },
+            onValueChange = {
+                )
+            }
     }
 })
