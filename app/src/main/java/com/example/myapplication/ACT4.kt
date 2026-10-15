@@ -48,7 +48,7 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
             value = textNama,
             singleLine = true,
             shape = MaterialTheme.shapes.large,
-            modifier = Modifier.width(250.dp), // Perbaikan: Menambahkan koma di akhir modifier
+            modifier = Modifier.width(250.dp),
             label = { Text(text = "Nama Lengkap") },
             onValueChange = {
                 textNama = it
@@ -67,7 +67,7 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                         selected = textJK == item,
                         onClick = { textJK = item }
                     )
-                    Text(item) // Perbaikan: Mengubah 'texT' menjadi 'Text'
+                    Text(item)
                 }
             }
         }
@@ -97,10 +97,10 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                 alamat = textAlamat
             }
         ) {
-            Text(stringResource(id = R.string.submit)) // Perbaikan: Menghapus tanda kurung tutup berlebih
+            Text(stringResource(id = R.string.submit))
         }
 
-        // Pindahkan divider kedua dan card ke dalam Column agar tersusun rapi secara vertikal
+
         HorizontalDivider(
             modifier = Modifier.padding(
                 bottom = dimensionResource(id = R.dimen.padding_medium),
