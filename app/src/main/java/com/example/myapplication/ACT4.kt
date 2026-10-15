@@ -13,10 +13,12 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.ui.unit.dp
 import androidx.compose.material3.OutlinedTextField // Gunakan material3 atau material tergantung proyek Anda
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
+import androidx.compose.ui.res.dimensionResource
 
 @Composable
 fun FormDataDiri(modifier: Modifier) {
@@ -64,7 +66,17 @@ fun FormDataDiri(modifier: Modifier) {
             modifier = Modifier.width(250.dp),
             label = { Text("Alamat") },
             onValueChange = {
-                )
+            textAlamat = it
             }
+        )
+        HorizontalDivider(
+            modifier = Modifier.padding(
+                bottom =
+                    dimensionResource(id= R.dimen.padding_medium),
+                top = dimensionResource(
+                    id= R.dimen.padding_medium)
+            )
+        ),
+        thickness = dimensionResource(id = R.dimen.divider_tipis)
     }
 })
