@@ -10,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
@@ -18,7 +19,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.material3.OutlinedTextField // Gunakan material3 atau material tergantung proyek Anda
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
+import androidx.compose.material3.Text
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.stringResource
 
 @Composable
 fun FormDataDiri(modifier: Modifier) {
@@ -77,6 +81,26 @@ fun FormDataDiri(modifier: Modifier) {
                     id= R.dimen.padding_medium)
             )
         ),
-        thickness = dimensionResource(id = R.dimen.divider_tipis)
+        thickness = dimensionResource(id = R.dimen.divider_tipis),
+        color = Color.DarkGray
+        )
+        Button(modifier = Modifier.fillMaxWidth(fraction = 1f),
+            enabled = textAlamat.isNotEmpty(),
+            onClick = {
+                nama = textNama
+                jenis = textJK
+                alamat = textAlamat
+            }
+        ){
+            Text(stringResource(id=R.string.submit)))
+        }
     }
+    HorizontalDivider(
+        modifier = Modifier.padding(
+            bottom =
+                dimensionResource(id= R.dimen.padding_medium),
+            top = dimensionResource(
+                id= R.dimen.padding_medium)
+        )
+    )
 })
