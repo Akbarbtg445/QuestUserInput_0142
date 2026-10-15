@@ -1,0 +1,2 @@
+class ACT4 {
+}
